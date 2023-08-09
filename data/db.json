@@ -4,7 +4,24 @@
         "id": 1,
         "usuario": "John Doe",
         "email": "john.due@gmail.com"
+      },
+      {
+        "id": 2,
+        "usuario": "martin garrix",
+        "email": "martin@gmail.com"
+      },
+      {
+        "id": 3,
+        "usuario": "Elizabeth Sanchez",
+        "email": "elizabeth@gmail.com"
+      },
+      {
+        "id": 4,
+        "usuario": "marta perez",
+        "email": "marta@gmail.com"
       }
+
+
     ],
     "heroes": [
       {
