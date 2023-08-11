@@ -8,22 +8,22 @@ import { environments } from 'src/environment/envinronment';
   providedIn: 'root',
 })
 export class HeroesService {
-
-  private baseUrl:string = environments.baseUrl;
+  private baseUrl: string = environments.baseUrl;
 
   constructor(private http: HttpClient) {}
 
-  getHeroes():Observable<Hero[]>{
-    
-    return this.http.get<Hero[]>(`${this.baseUrl}/heroes`)
+  getHeroes(): Observable<Hero[]> {
+    return this.http.get<Hero[]>(`${this.baseUrl}/heroes`);
   }
 
-  getHeroById(id:string):Observable<Hero|undefined>{
+  getHeroById(id: string): Observable<Hero | undefined> {
+    return this.http
+      .get<Hero>(`${this.baseUrl}/heroes/${id}`)
+      .pipe(catchError((error) => of(undefined)));
+  }
 
-    return this.http.get<Hero>(`${this.baseUrl}/heroes/${id}`)
-            .pipe(
-              catchError(error => of(undefined))
-            )
-
+  getSuggestion(query: string): Observable<Hero[]> {
+    
+    return this.http.get<Hero[]>(`${this.baseUrl}/heroes?q=${query}&_limit=6`);
   }
 }
