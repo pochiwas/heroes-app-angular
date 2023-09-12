@@ -7,3 +7,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .spacer{
     flex: 1 1 auto;
 }
+
+.autocomplete{ 
+    padding-top: 10px;
+    width: 12px;
+    height: 12px;
+}
