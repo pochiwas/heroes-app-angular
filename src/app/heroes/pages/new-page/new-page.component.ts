@@ -81,17 +81,16 @@ export class NewPageComponent implements OnInit {
       data: this.heroForm.value,
     });
 
-    dialogRef.afterClosed()
-    .pipe(
-      filter((result:boolean) => result),
-      switchMap(() => this.heroService.deleteHeroById(this.currentHero.id)),
-      filter((wasDeleted:boolean) => wasDeleted),
-    ).subscribe(() =>{
-      this.router.navigate(['/heroes'])
-    });
-
-
-
+    dialogRef
+      .afterClosed()
+      .pipe(
+        filter((result: boolean) => result),
+        switchMap(() => this.heroService.deleteHeroById(this.currentHero.id)),
+        filter((wasDeleted: boolean) => wasDeleted)
+      )
+      .subscribe(() => {
+        this.router.navigate(['/heroes']);
+      });
 
     // dialogRef.afterClosed().subscribe((result) => {
     //   if (!result) return;
