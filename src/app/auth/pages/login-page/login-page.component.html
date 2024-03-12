@@ -10,7 +10,7 @@
         <input type="text" matInput placeholder="Contraseña">
     </mat-form-field>
 
-    <button mat-button mat-flat-button color="primary">Ingresar <mat-icon>save</mat-icon></button>
+    <button mat-button mat-flat-button color="primary" (click)="onLogin()">Ingresar <mat-icon>save</mat-icon></button>
 
     <div class="flex justify-content-end mt-5">
         <a routerLink="/auth/new-account">¿Ya tienes cuenta?</a>
